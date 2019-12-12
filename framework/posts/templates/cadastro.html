@@ -1,0 +1,23 @@
+{%  extends 'home.html' %}
+{%  load static %}
+
+{% block content %}
+
+<h2 class="titulo_pagina">Cadastro</h2>
+<h3 class="subtitulo_pagina"> Insira seus dados conforme o formulário:</h3>
+
+{% if formulario %}
+
+<section id='caixa_form'>
+    <form method="POST" class="formulario">
+         {% csrf_token %}
+        {{formulario}}
+        <button>Enviar pedido</button>
+    </form>
+</section>
+
+{% endif %}
+{% if msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}
